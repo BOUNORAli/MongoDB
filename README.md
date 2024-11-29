@@ -1,6 +1,6 @@
 # Répertoire des Travaux Pratiques - Bases de Données NoSQL
 
-Ce répertoire contient les travaux pratiques du cours de Bases de Données NoSQL dispensé par Samir Youcef à l'Institut Galilée, Université Sorbone Paris Nord.
+Ce répertoire contient les travaux pratiques du cours de Bases de Données NoSQL dispensé par Samir Youcef à l'école d'ingénieur Sup Galilée, Université Sorbone Paris Nord.
 
 ## Contenu
 
