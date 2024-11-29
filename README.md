@@ -17,8 +17,10 @@ j'ai utilisé la requête suivante :
 ## 3. Afficher la liste des films d’action.
 
 j'ai utilisé la requête suivante :
+```bash
 
 db.films.find({ genre: "Action" })
+```
 
 ![image](https://github.com/user-attachments/assets/90af34a7-45b2-4573-a473-2c22ca6cab55)
 
