@@ -2,20 +2,21 @@
 
 
 ## 1. Vérifier que le données ont été importées, en les comptant par exemple
+
+
 <img width="598" alt="image" src="https://github.com/user-attachments/assets/8291f6a4-eaea-46c3-b888-cee5d76b5c4e">
 
 
-## 2. Avant de commencer `a interroger la base de donn´ees lesfilms, il est essentiel de bien comprendre
-la structure d’un document dans notre collection de films. Pour ce faire, nous allons utiliser la
-fonction findOne(), qui permet de r´ecup´erer un seul document.
-db . films . findOne ()
+## 2. Avant de commencer à interroger la base de données lesfilms, il est essentiel de bien comprendre la structure d’un document dans notre collection de films. Pour ce faire, nous allons utiliser la fonction findOne(), qui permet de récupérer un seul document. db.films.findOne ()
+
+j'ai utilisé la requête suivante :
 
 ![image](https://github.com/user-attachments/assets/eb398153-2799-4642-a850-a51f24ff8597)
 
 
 ## 3. Afficher la liste des films d’action.
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find({ genre: "Action" })
 
@@ -23,7 +24,7 @@ db.films.find({ genre: "Action" })
 
 ## 4. Afficher le nombre de films d’action
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.count({ genre: "Action" })
 
@@ -33,7 +34,7 @@ db.films.count({ genre: "Action" })
 
 ## 5. Afficher les films d’action produits en France
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find({ genre: "Action", country: "FR" })
 
@@ -42,7 +43,7 @@ db.films.find({ genre: "Action", country: "FR" })
 
 ## 6. Afficher les films d’action produits en France en 1963.
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find({ genre: "Action", country: "FR", year: 1963 })
 
@@ -51,7 +52,7 @@ db.films.find({ genre: "Action", country: "FR", year: 1963 })
 
 ## 7. Jusqu’à maintenant, à chaque fois qu’un document est renvoyé, tous ses attributs sont affichés. Pour n’afficher que certains attributs, on utilise un filtre. Pour afficher les films d’action réalisés en France, sans les grades, le filtre est passé comme deuxième paramètre de la fonction find() comme ceci.
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find(
   { genre: "Action", country: "FR" },  
@@ -64,7 +65,7 @@ db.films.find(
 ## 8. Vous avez certainement remarqué que les identifiants des documents sont affichés meme si un filtre est appliqué aux résultats. Pour ne pas les afficher, vous pouvez ajouter sa valeur est la mettre à zéro, comme ceci (cette requete nous renvois tous les films d’action réalisés en France sans les identifiants) :
 
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find(
   { genre: "Action", country: "FR" },  
@@ -76,7 +77,7 @@ db.films.find(
 
 ## 9. Afficher les titres et les grades des films d’action réalisés en France sans leurs identifiants.
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find(
   { genre: "Action", country: "FR" },  
@@ -88,7 +89,7 @@ db.films.find(
 
 ## 10. Les filtres affichés jusqu’à présent sont par valeur exacte. Afficher les titres et les notes des films d’action réalisés en France et ayant obtenus une note supérieur à 10. Remarquez que meme si des films ont obtenu certaines notes inférieures à 10 sont affichés.
 
-j'ai utilisé la commande :
+j'ai utilisé la requête suivante :
 
 db.films.find(
   { 
@@ -105,7 +106,7 @@ db.films.find(
 
 ## 11. Si l’on souhaite afficher que des films ayant que des notes supérieures à 10, on doit préciser que les notes obtenues sont toutes supérieures à 40. La requetes suivantes permet d’afficher les films d’action réalisés en France ayant obtenus que des notes supérieures à 10.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.find(
   { 
@@ -122,7 +123,7 @@ db.films.find(
 
 ## 12. Afficher les différents genres de la base lesfilms.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.aggregate([
   { $group: { _id: "$genre" } }
@@ -133,7 +134,7 @@ db.films.aggregate([
 
 ## 13. Afficher les différents grades attribués.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.aggregate([
   { $unwind: "$grades" },
@@ -146,7 +147,7 @@ db.films.aggregate([
 ## 14. Afficher tous les filmes dans lesquels joue au moins un des artistes suivants [”artist:4”,”artist:18”,”artist:11”].
 
 
-j'ai utilisé la requete suivante, mais ça ne retourne rien car il n'existent pas :
+j'ai utilisé la requête suivante, mais ça ne retourne rien car il n'existent pas :
 
 db.films.find({
   "actors._id": { $in: ["artist:4", "artist:18", "artist:11"] }
@@ -158,7 +159,7 @@ db.films.find({
 
 ## 15. Afficher tous les films qui n’ont pas de résumé.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.find({
   $or: [
@@ -172,7 +173,7 @@ db.films.find({
 
 ## 16. Afficher tous les films tournés avec Leonardo DiCaprio en 1997.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.find({
   year: 1997,
@@ -185,7 +186,7 @@ db.films.find({
 
 ## 17. Afficher les films tournée avec Leonardo DiCaprio ou 1997.
 
-j'ai utilisé la requete suivante :
+j'ai utilisé la requête suivante :
 
 db.films.find({
   year: 1997,
