@@ -152,7 +152,7 @@ db.films.aggregate([
 ## 14. Afficher tous les filmes dans lesquels joue au moins un des artistes suivants [”artist:4”,”artist:18”,”artist:11”].
 
 
-j'ai utilisé la requête suivante, mais ça ne retourne rien car il n'existent pas :
+j'ai utilisé la requête suivante, mais ça ne retourne rien car ils n'existent pas :
 ```bash
 db.films.find({
   "actors._id": { $in: ["artist:4", "artist:18", "artist:11"] }
