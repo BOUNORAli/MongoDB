@@ -1,4 +1,4 @@
-# Cours : Introduction à CouchDB et au MapReduce dans un contexte NoSQL
+# Cours : Introduction à CouchDB et au MapReduce
 
 ## Contexte et objectifs
 
